@@ -17,8 +17,6 @@ void ULobbyUserWidget::SetInfo(ALobbyPlayerState* InPlayerState)
 	RefreshUI();
 }
 
-
-
 void ULobbyUserWidget::RefreshUI()
 {
 	if (PlayerState == nullptr)

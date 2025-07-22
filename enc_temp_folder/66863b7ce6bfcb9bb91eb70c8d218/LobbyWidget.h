@@ -19,18 +19,18 @@ class LASTMANSTANDING_API ULobbyWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	virtual bool Initialize() override;
+	//virtual bool Initialize() override;
 
-	UFUNCTION(BlueprintCallable)
-	void SetInfo();
-	UFUNCTION(BlueprintCallable)
-	void RefreshUI();
+	//UFUNCTION(BlueprintCallable)
+	//void SetInfo();
+	//UFUNCTION(BlueprintCallable)
+	//void RefreshUI();
 
 
 
 protected:
 	UFUNCTION(BlueprintCallable,BlueprintPure)
-	TArray<ALobbyPlayerState*> GetLobbyPlayerStates();
+	TArray<ALobbyPlayerState*> GetLobbyPlayerState();
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	ALobbyPlayerState* GetLobbyPlayerStateAtIndex(int32 Inindex);
