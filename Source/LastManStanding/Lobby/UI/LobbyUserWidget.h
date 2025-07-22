@@ -6,6 +6,11 @@
 #include "Blueprint/UserWidget.h"
 #include "LobbyUserWidget.generated.h"
 
+
+class UTextBlock;
+class UEditableTextBox;
+class UButton;
+class ALobbyPlayerState;
 /**
  * 
  */
@@ -14,4 +19,31 @@ class LASTMANSTANDING_API ULobbyUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
+
+public:
+	UPROPERTY(BlueprintCallable)
+	void SetInfo(ALobbyPlayerState* InPlayerState);
+
+	UPROPERTY(BlueprintCallable)
+	void RefreshUI();
+protected:
+
+	UPROPERTY(BlueprintReadWrite , meta = (BindWidget));
+	TObjectPtr<UTextBlock> Txt_Ready;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget));
+	TObjectPtr<UTextBlock> Txt_PlayerName;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget));
+	TObjectPtr<UEditableTextBox> Editable_PlayerName;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget));
+	TObjectPtr<UButton> Btn_Ready;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget));
+	TObjectPtr<UButton> Btn_KickPlayer;
+
+protected:
+	UPROPERTY(BlueprintReadWrite);
+	TObjectPtr<ALobbyPlayerState> PlayerState;
 };

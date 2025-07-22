@@ -3,12 +3,3 @@
 
 #include "LobbyUserWidget.h"
 
-void ULobbyUserWidget::SetInfo(ALobbyPlayerState* InPlayerState)
-{
-
-}
-
-void ULobbyUserWidget::RefreshUI()
-{
-
-}
