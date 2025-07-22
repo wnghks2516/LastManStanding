@@ -21,10 +21,10 @@ class LASTMANSTANDING_API ULobbyUserWidget : public UUserWidget
 	
 
 public:
-	UPROPERTY(BlueprintCallable)
+	UFUNCTION(BlueprintCallable)
 	void SetInfo(ALobbyPlayerState* InPlayerState);
 
-	UPROPERTY(BlueprintCallable)
+	UFUNCTION(BlueprintCallable)
 	void RefreshUI();
 protected:
 

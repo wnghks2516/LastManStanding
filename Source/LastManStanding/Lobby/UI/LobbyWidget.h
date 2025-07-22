@@ -6,6 +6,10 @@
 #include "Blueprint/UserWidget.h"
 #include "LobbyWidget.generated.h"
 
+class UVerticalBox;
+class UButton;
+class ULobbyUserWidget;
+class ALobbyPlayerState;
 /**
  * 
  */
@@ -13,5 +17,29 @@ UCLASS()
 class LASTMANSTANDING_API ULobbyWidget : public UUserWidget
 {
 	GENERATED_BODY()
-	
+protected:
+	UFUNCTION(BlueprintCallable,BlueprintPure)
+	TArray<ALobbyPlayerState*> GetLobbyPlayerState();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	ALobbyPlayerState* GetLobbyPlayerStateAtIndex(int32 Inindex);
+
+
+protected:
+	UPROPERTY(BlueprintReadWrite,meta=(BindWidget))
+	TObjectPtr<UVerticalBox> UserList;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	TObjectPtr<UButton> Btn_GameConfig;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	TObjectPtr<UButton> Btn_Close;
+protected:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<ULobbyUserWidget> ULobbyUserWidgetClass;
+
+	UPROPERTY(BlueprintReadWrite)
+	TArray<TObjectPtr<ULobbyUserWidget>> LobbyUsers;
+
 };
