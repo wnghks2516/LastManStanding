@@ -17,6 +17,13 @@ class LASTMANSTANDING_API ALobbyPlayerState : public APlayerState
 public:
 	virtual void GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const override;
 
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bFlipFlopToggle = false;
+
+	UFUNCTION(NetMulticast,Reliable)
+	void Multicast_Ready();
 private:
 	UFUNCTION()
 	void OnRep_NicknameChange();
@@ -35,5 +42,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_RefreshLobbyUI();
 
+
+public:
+
+	
 
 };

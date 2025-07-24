@@ -16,8 +16,7 @@ void ALobbyController::Server_HandleReadyButton_Implementation()
 		LobbyPlayerState->Multicast_Ready();
 
 	ALobbyGameMode* LobbyGamemode = Cast<ALobbyGameMode>(UGameplayStatics::GetGameMode(this));
-	if (LobbyGamemode)
-		LobbyGamemode->TryStartGame();
+	
 	
 	
 }

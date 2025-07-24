@@ -5,21 +5,6 @@
 #include "LobbyPlayerState.h"
 
 
-
-
-void ALobbyGameMode::TryStartGame()
-{
-	BP_TryStartGame();
-}
-
-
-
-//void ALobbyGameMode::TryStartGame()
-//{
-//	FString TravelURL = MapName + "?listen";
-//	GetWorld()->ServerTravel(TravelURL);
-//}
-
 //bool ALobbyGameMode::IsEverybodyReady()
 //{
 //	AGameStateBase* GameStates = UGameplayStatics::GetGameState(this);

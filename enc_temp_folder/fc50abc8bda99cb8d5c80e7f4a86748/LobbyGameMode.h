@@ -18,8 +18,7 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_TryStartGame();
 
-	UFUNCTION()
-	void TryStartGame();
+	
 
 	/*UFUNCTION(BlueprintCallable,BlueprintPure)
 	bool IsEverybodyReady();*/
