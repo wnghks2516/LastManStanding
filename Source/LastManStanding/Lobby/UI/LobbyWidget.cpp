@@ -22,6 +22,8 @@ bool ULobbyWidget::Initialize()
 	return true;
 }
 
+
+
 void ULobbyWidget::SetInfo()
 {
 	//Clear Children
