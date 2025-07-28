@@ -13,9 +13,16 @@ void URoomItemWidget::SetInfo(FBlueprintSessionResult InSessionResult)
 
 void URoomItemWidget::RefreshUI()
 {
-	Txt_RoomName->SetText(FText());
+	FString RoomName;
+	Result.OnlineResult.Session.SessionSettings.Get(FName("Room_Name"), OUT RoomName);
+	Txt_RoomName->SetText(FText::FromString(RoomName));
 
-	Txt_MapName->SetText(FText());
+	FString MapName;
+	Result.OnlineResult.Session.SessionSettings.Get(FName("Map_Name"), OUT MapName);
+	Txt_MapName->SetText(FText::FromString(MapName));
 
-	Txt_PlayerCount->SetText(FText());
+	const int32 CurrentPlayer = Result.OnlineResult.Session.SessionSettings.NumPublicConnections - Result.OnlineResult.Session.NumOpenPublicConnections;
+	const int32 MaxPlayer = Result.OnlineResult.Session.SessionSettings.NumPublicConnections ;
+	FString PlayerCountString = FString::Printf(TEXT(" %d / %d"), CurrentPlayer, MaxPlayer);
+	Txt_PlayerCount->SetText(FText::FromString(PlayerCountString));
 ;}
