@@ -5,7 +5,7 @@
 #include "OnlineSubsystem.h"
 #include "OnlineSessionSettings.h"
 #include "Online/OnlineSessionNames.h"
-#include "Kismet/Gameplaystatics.h"
+#include "kismet/Gameplaystatics.h"
 
 UOnelineSessionsSubsystem::UOnelineSessionsSubsystem()
 	: CreateCompleteDelegate(FOnCreateSessionCompleteDelegate::CreateUObject(this, &ThisClass::OnCreate))
@@ -15,14 +15,6 @@ UOnelineSessionsSubsystem::UOnelineSessionsSubsystem()
 
 void UOnelineSessionsSubsystem::CreateSession()
 {
-	FNamedOnlineSession* ExistingSession = SessionManager->GetNamedSession(NAME_GameSession);
-
-	if (ExistingSession)
-	{
-		SessionManager->DestroySession(NAME_GameSession);
-		return;
-	}
-
 	//SessionManager->OnCreateSessionCompleteDelegates.AddUObject(this, &UOnelineSessionsSubsystem::OnCreate);
 	
 	CreateCompleteDelegateHandle = SessionManager->AddOnCreateSessionCompleteDelegate_Handle(CreateCompleteDelegate);
