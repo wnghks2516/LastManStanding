@@ -64,8 +64,4 @@ void UOnelineSessionsSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 	if (SessionManager == nullptr)
 		return;
 
-	FString SubName = OnlineSubsystem->GetSubsystemName().ToString();
-	if (GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Cyan, SubName);
-
 }
